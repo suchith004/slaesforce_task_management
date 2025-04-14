@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="My Tasks" icon-name="custom:custom63">
+        <template if:true={tasks}>
+            <lightning-datatable
+                key-field="Id"
+                data={tasks}
+                columns={columns}
+                hide-checkbox-column>
+            </lightning-datatable>
+        </template>
+        <template if:true={error}>
+            <p class="slds-text-color_error">Error loading tasks: {error.message}</p>
+        </template>
+    </lightning-card>
+</template>
